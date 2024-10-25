@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ALOLAMI Botol Yakult</title>
+    <style>
+      /* Mengatur style dasar */
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+      }
+
+      #content,
+      #question1,
+      #question2 {
+        display: none;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      #content img {
+        max-width: 300px; /* Sesuaikan ukuran gambar */
+        margin-top: 10px;
+      }
+
+      .rainbow-text {
+        font-size: 24px;
+        font-weight: bold;
+        background: linear-gradient(
+          90deg,
+          red,
+          orange,
+          yellow,
+          green,
+          cyan,
+          blue,
+          violet
+        );
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: rainbow 3s infinite linear;
+      }
+
+      @keyframes rainbow {
+        0% {
+          background-position: 0%;
+        }
+        100% {
+          background-position: 100%;
+        }
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #fff;
+        background-color: #333;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        margin: 5px;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showQuestion1()">ALOLAMI</button>
+
+    <div id="question1">
+      <p>Apakah lu pendek?</p>
+      <button onclick="showQuestion2()">Ya</button>
+      <button onclick="showQuestion2()">Banget</button>
+    </div>
+
+    <div id="question2">
+      <p>Apakah lu Botol Yakult?</p>
+      <button onclick="showFinalContent()">Ya</button>
+      <button onclick="showFinalContent()">Yaa banget</button>
+    </div>
+
+    <div id="content">
+      <p class="rainbow-text">SCP ALOLAMI BOTOL YAKULT</p>
+      <img src="ALOLAMI.jpeg" alt="Botol Yakult" />
+      <!-- Ganti path dengan lokasi gambar -->
+      <audio id="music" src="aur auran.mp3"></audio>
+      <!-- Ganti path dengan lokasi musik -->
+    </div>
+
+    <script>
+      function showQuestion1() {
+        document.getElementById("question1").style.display = "block"; // Tampilkan pertanyaan pertama
+      }
+
+      function showQuestion2() {
+        document.getElementById("question1").style.display = "none"; // Sembunyikan pertanyaan pertama
+        document.getElementById("question2").style.display = "block"; // Tampilkan pertanyaan kedua
+      }
+
+      function showFinalContent() {
+        document.getElementById("question2").style.display = "none"; // Sembunyikan pertanyaan kedua
+        document.getElementById("content").style.display = "block"; // Tampilkan konten akhir
+        document.getElementById("music").play(); // Memutar musik
+      }
+    </script>
+  </body>
+</html>
